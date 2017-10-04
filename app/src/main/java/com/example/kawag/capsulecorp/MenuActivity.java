@@ -13,8 +13,19 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        Button btnDetalhes = (Button) findViewById(R.id.consultar_btn);
+        Button btnDetalhes = (Button) findViewById(R.id.detalhes_btn);
         btnDetalhes.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick (View view){
+                        Intent intent = new Intent(MenuActivity.this, DetalhesActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
+        Button btnConsultar  = (Button) findViewById(R.id.consultar_btn);
+        btnConsultar.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
                     public void onClick (View view){
